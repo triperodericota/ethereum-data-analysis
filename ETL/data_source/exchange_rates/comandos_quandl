@@ -1,0 +1,21 @@
+Daily Exchange Rates(BOE-Bank of England). Exchange rates to USD
+
+Canadian Dollar(CAD) => XUDLCDD curl "https://www.quandl.com/api/v3/datasets/BOE/XUDLCDD/data.json?start_date=2016-01-01&end_date=2019-12-5&collapse=daily&api_key=iEbaGKC2wNmeykExU2mG"
+Chinese Yuan (CNY) => XUDLBK73
+Hong Kong Dollar (HKD) => XUDLHDD
+Indian Rupee (INR) => XUDLBK64
+Japanese Yen (JPY) => XUDLJYD
+New Zealand Dollar (NZD) => XUDLNDD
+Russian Ruble (RUB) => XUDLBK69
+Pound Sterling (GBP) => XUDLGBD
+South African Rand (ZAR) => XUDLZRD
+
+USD Exchange Rates(FRED - Federal Reserve Economic Data)
+Brazilian Real(BRL) => DEXBZUS(curl "https://www.quandl.com/api/v3/datasets/FRED/DEXBZUS/data.json?start_date=2016-01-01&end_date=2019-12-5&collapse=daily&api_key=iEbaGKC2wNmeykExU2mG")
+Mexican Peso (MXN) => DEXMXUS
+Venezuelan Bolivar (VEF) => DEXVZUS
+Sri Lankan(LKR) => DEXSLUS
+
+
+REFENCES :
+- https://blog.quandl.com/api-for-currency-data
