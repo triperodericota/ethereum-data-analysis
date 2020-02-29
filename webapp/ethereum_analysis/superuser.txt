@@ -1,2 +1,0 @@
-user: django_root
-password: pass
