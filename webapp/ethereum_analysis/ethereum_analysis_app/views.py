@@ -7,9 +7,12 @@ from .models import *
 from django.db import connection
 from django.db.models import Q
 from bokeh.plotting import figure, output_file, show
+from bokeh.models import ColumnDataSource,CustomJS,HoverTool
 from bokeh.embed import components
 from bokeh.models.formatters import DatetimeTickFormatter
+#from bokeh.models.callbacks import CustomJS
 import datetime
+import pdb
 
 def index(request):
 
@@ -23,13 +26,20 @@ def index(request):
     dai_transactions = DaiTransactions.objects.all()
     dai_transactions_df = read_frame(dai_transactions).set_index('dai_transactions_id')
     group_by_dates = dai_transactions_df.groupby('date_0')
-    amount_of_txs_per_day = group_by_dates.size()
+    amount_of_txs_per_day = group_by_dates.size().to_frame()
+    amount_of_txs_per_day = amount_of_txs_per_day.rename(columns={0:'count'})
+    source = ColumnDataSource.from_df(amount_of_txs_per_day)
 
     plot = figure(title="DAI's transactions", y_axis_label= "Transaction's count", plot_width=1000, plot_height=500)
-    plot.line(amount_of_txs_per_day.index, amount_of_txs_per_day.values, legend= "DAI's transactions", line_width=2)
+    l=plot.line(x='date_0',y='count', legend= "DAI's transactions", line_width=2, source=source)
     plot.xaxis.formatter = DatetimeTickFormatter(days=["%d %m %Y"])
-    script, div = components(plot)
 
+    # adding hover interaction to plot
+    hover = HoverTool(tooltips=[('date',"@date_0{%Y-%m-%d}"),('count','@count')],formatters={'date_0':'datetime'})
+    plot.add_tools(hover)
+
+    script, div = components(plot)
+    #pdb.set_trace()
     return render(request,'ethereum_analysis_app/index.html',{'script': script, 'div': div, 'exchanges_rates': list(countries_with_exchanges)})
 
 
