@@ -68,6 +68,9 @@ print("\n Total SAI's transfers in dataset: " + str(sai_txs.size))
 print("\n Total holders in dataset: " + str(sai_txs["from_address"].unique().size) + "addresses")
 print("\n Total value tranfered in Wei: " + str(sai_txs["value"].sum()))
 
+value_not_zero = sai_txs[sai_txs.value != 0]
+print("\n Total transations with value distinct to 0:" + str(value_not_zero.size))
+
 print("\n Mean gas in all transactions: " + str(sai_txs["gas"].mean()))
 print("\n Max/min value for gas: " + str(sai_txs["gas"].max()) + "/" + str(sai_txs["gas"].min()))
 #correlation between gas and gas_price
