@@ -100,14 +100,11 @@ def exchange_rates_for_country(request):
         print("product="+str(txs_amount_in_usd * ec[2]))
         #pdb.set_trace()
         exchange_rates_df.loc[ec[0],'txs_amount_in_country_currency'] = ec[2] * txs_amount_in_usd.values[0] if txs_amount_in_usd.size > 0 else 0
-    #exchange_rates_df['txs_amount_in_country_currency'] = txs_amount_in_country_currency
-    #print(exchange_rates_df.loc[:,['date_0','txs_amount_in_country_currency']])
 
     source = ColumnDataSource.from_df(exchange_rates_df)
 
     title = "USD/" + country_selected.currency_code + " Exchange rates"
     exchange_rates_plot = figure(title=title, y_axis_label=country_selected.currency, plot_width=1000, plot_height=500)
-    pdb.set_trace()
     exchange_rates_plot.line(x='date_0', y='value', legend=country_selected.currency, line_width=2, line_color=random.choice(random.choice(Viridis)), source=source)
     exchange_rates_plot.xaxis.formatter = DatetimeTickFormatter(days=["%d %m %Y"])
 
