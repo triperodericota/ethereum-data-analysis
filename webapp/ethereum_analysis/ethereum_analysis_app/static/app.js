@@ -11,7 +11,7 @@ $(document).ready(function(){
       success: function(json){
         $("head").append(json.er_script);
         $('#exchange_rates_plot').append(json.er_div);
-        //alert(json.er_div);
+
       }
 
     })
