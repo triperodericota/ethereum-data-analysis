@@ -176,7 +176,7 @@ processing_quandl_data('data_source/exchange_rates/Europe and Central Asia/danis
 #Euro
 processing_quandl_data('data_source/exchange_rates/Europe and Central Asia/euro.json', 'Euro Quandl exchange rates', europe_and_central_asia, 'USD_EUR/Quandl')
 #Norwegian krone
-processing_quandl_data('data_source/exchange_rates/Europe and Central Asia/danish_krone.json', 'Norwegian Krone Quandl exchange rates', europe_and_central_asia, 'USD_NOK/Quandl')
+processing_quandl_data('data_source/exchange_rates/Europe and Central Asia/norwegian_krone.json', 'Norwegian Krone Quandl exchange rates', europe_and_central_asia, 'USD_NOK/Quandl')
 #Pound starling
 processing_quandl_data('data_source/exchange_rates/Europe and Central Asia/pound_starling.json', 'Pound Starling Quandl exchange rates', europe_and_central_asia, 'USD_GBP/Quandl')
 #Russian Ruble

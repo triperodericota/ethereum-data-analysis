@@ -64,7 +64,7 @@ class InvestingCSVFilesReading(AbstractReadingStrategy):
             #pdb.set_trace()
             exchange_rate_schema["date_id"].append(self.retrieve_date_id(exchange_rate.Date.date()))
             exchange_rate_schema["date"].append(exchange_rate.Date.date())
-            exchange_rate_schema["value"].append(exchange_rate.Price)
+            exchange_rate_schema["value"].append(str(exchange_rate.Price).replace(",",""))
             exchange_rate_schema["country_id"].append(country_id)
 
         return pd.DataFrame(exchange_rate_schema)
