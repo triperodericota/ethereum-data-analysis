@@ -105,7 +105,7 @@ toolz==0.10.0
 tornado==6.0.3
 #ubuntu-drivers-common==0.0.0
 #ufw==0.36
-unattended-upgrades==0.1
+#unattended-upgrades==0.1
 unity-scope-calculator==0.1
 unity-scope-chromiumbookmarks==0.1
 unity-scope-colourlovers==0.1
