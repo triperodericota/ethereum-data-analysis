@@ -126,6 +126,6 @@ web3==4.7.2
 webencodings==0.5
 websockets==6.0
 whitenoise==5.0.1
-xdiagnose==3.8.8
+#xdiagnose==3.8.8
 xkit==0.0.0
 zope.interface==4.3.2
