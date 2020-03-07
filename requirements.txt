@@ -17,7 +17,7 @@ cycler==0.10.0
 cytoolz==0.10.1
 decorator==4.1.2
 defer==1.0.4
-distro-info===0.18ubuntu0.18.04.1
+#distro-info===0.18ubuntu0.18.04.1
 dj-database-url==0.5.0
 Django==3.0.3
 django-bootstrap-select==0.1.3
