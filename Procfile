@@ -1,1 +1,1 @@
-web: gunicorn ethereum_analysis.wsgi --log-file -
+web: gunicorn webapp/ethereum_analysis/ethereum_analysis/wsgi.py --log-file -
