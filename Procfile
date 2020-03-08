@@ -1,2 +1,2 @@
-web: python manage.py runserver
-web: gunicorn $WSGI_PATH:application --log-file -
+# web: python manage.py runserver
+web: gunicorn ethereum_analysis.ethereum_analysis.wsgi:application --log-file
