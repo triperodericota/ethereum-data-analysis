@@ -9,6 +9,9 @@ https://docs.djangoproject.com/en/3.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
+import dj_database_url
+prod_db  =  dj_database_url.config(conn_max_age=500)
+#DATABASES['legacy'].update(prod_db)
 
 import os
 
@@ -25,7 +28,7 @@ SECRET_KEY = '_vbc%5&e!@+@*#w68t)8cla1do=ery%evqt-b)s=n37y7)h61_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost','daitransactionsanalysis.herokuapp.com/']
 
 
 # Application definition
@@ -33,6 +36,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'ethereum_analysis_app.apps.EthereumAnalysisAppConfig',
     'bootstrap4',
+    #'bootstrap_select.apps.BootstrapSelectConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,6 +46,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -142,3 +147,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+#  Add configuration for static files storage using whitenoise
+#STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
