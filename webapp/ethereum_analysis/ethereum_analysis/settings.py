@@ -28,7 +28,7 @@ SECRET_KEY = '_vbc%5&e!@+@*#w68t)8cla1do=ery%evqt-b)s=n37y7)h61_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','daitransactionsanalysis.herokuapp.com/']
+ALLOWED_HOSTS = ['localhost','daitransactionsanalysis.herokuapp.com']
 
 
 # Application definition
