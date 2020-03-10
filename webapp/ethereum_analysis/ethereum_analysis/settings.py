@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 import dj_database_url
 prod_db  =  dj_database_url.config(conn_max_age=500)
-#DATABASES['legacy'].update(prod_db)
+DATABASES['legacy'].update(prod_db)
 
 import os
 
@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '_vbc%5&e!@+@*#w68t)8cla1do=ery%evqt-b)s=n37y7)h61_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost','daitransactionsanalysis.herokuapp.com']
 
@@ -144,6 +144,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '../static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
