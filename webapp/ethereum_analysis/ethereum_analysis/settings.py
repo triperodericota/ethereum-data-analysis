@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 import dj_database_url
-
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -20,8 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['SECRET_KEY']
-
+SECRET_KEY = '_vbc%5&e!@+@*#w68t)8cla1do=ery%evqt-b)s=n37y7)h61'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
