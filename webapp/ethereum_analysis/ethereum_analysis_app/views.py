@@ -19,6 +19,7 @@ import pdb
 import pandas as pd
 
 def retrieve_eth_usd_in(range_of_timestamps):
+    print(str(os.path.abspath('../')))
     print("EXIST:" + str(os.path.exists("../../ETL/data_source/exchange_rates/eth_to_usd.json")))
     source = pd.read_json("../../ETL/data_source/exchange_rates/eth_to_usd.json")
     exchanges = source['Data']['Data']
