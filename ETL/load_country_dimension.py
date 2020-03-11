@@ -5,11 +5,10 @@ import numpy as np
 import os
 
 def load_dimension(connection_db):
-    print(str(os.getcwd()))
-    print("EXIST: " + str(os.path.exists("ETL/data_source/world-regions-according-to-the-world-bank.csv")))
+
     countrys = pd.read_csv("ETL/data_source/world-regions-according-to-the-world-bank.csv")
     currency_codes = pd.read_csv("ETL/data_source/iso_4217_currency_codes.csv")
-
+    print(countrys.head(3))
     countrys = countrys.loc[:,['country','Code','World Region according to the World Bank']]
     currency_codes = currency_codes.loc[:,['Entity','Currency','Alphabetic_Code']]
     countrys.loc[:,'country'] = countrys.apply(lambda line: line.country.title(), 1)
